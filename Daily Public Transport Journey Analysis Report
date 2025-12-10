@@ -1,0 +1,135 @@
+                                                                                  Daily Public Transport Journey Analysis Report
+Introduction
+
+Understanding fluctuations in public transport usage is essential for optimizing fleet deployment and improving commuter experience. Daily ridership varies due to weekday patterns, weekend slowdowns, school schedules, and special events. This report examines historical passenger trends across multiple service types and generates a short-term 7-day forecast using the SARIMA model.
+
+Objectives
+
+Examine past ridership behaviour and seasonal trends
+
+Extract operational insights from the data
+
+Produce a 7-day demand forecast for each service line
+
+Assess the model using standard performance metrics
+
+Dataset Overview
+
+The dataset includes daily passenger counts for multiple transport services. Each column represents a different service category.
+
+Column	Description
+Date	Daily calendar date
+Local Route	Ridership on neighbourhood bus routes
+Light Rail	Passenger counts on light rail systems
+Peak Service	Transport usage during peak-hour operations
+Rapid Route	High-speed bus corridor ridership
+School	Student-oriented service passenger counts
+Key Insights
+
+Local Route and Rapid Route consistently show strong weekday activity.
+
+Light Rail demonstrates a steady but gradual upward trend.
+
+Small-volume services display high volatility, making them harder to predict.
+
+Sudden spikes often align with public holidays or city-wide events.
+
+Growth in uncategorized counts hints at possible data classification drift.
+
+Data Cleaning & Preprocessing
+
+Removed missing or invalid values, ensuring no negative ridership entries
+
+Converted the date column to a datetime index
+
+Resampled to daily frequency to maintain continuity
+
+Used summary statistics and plots to inspect outliers and irregular patterns
+
+Exploratory Data Analysis
+Trend Patterns
+
+Local Route and Rapid Route present a gradual upward trajectory
+
+Peak Service demand remains mostly unchanged over years
+
+Seasonal Behaviour
+
+Strong weekday demand with predictable dips on weekends
+
+School services sharply increase during academic terms
+
+Variability & Outliers
+
+Peak Service and School ridership are the most unstable day-to-day
+
+Holidays or city events lead to noticeable temporary ridership spikes
+
+Distribution Characteristics
+
+High-volume routes exhibit right-skewed distributions
+
+Low-volume services frequently report zero or near-zero ridership
+
+Forecasting Methodology
+Model
+
+SARIMA (Seasonal ARIMA)
+
+Why SARIMA?
+
+Effectively handles seasonal cycles and non-stationary behavior
+
+Suitable for daily transport demand with weekly recurrence
+
+Offers interpretable predictions and confidence intervals
+
+Workflow
+
+Preprocessing and stationarity checks
+
+ADF test for differencing needs
+
+Route-wise SARIMA model fitting
+
+Generation of 7-day forecasts
+
+Negative forecast outputs clipped to zero
+
+Evaluation using MAE, RMSE, and SMAPE
+
+Operational Insights & Recommendations
+
+Increase fleet availability on weekdays and during school term months
+
+Scale down deployments on weekends and non-working holidays
+
+Reassign under-utilized buses to busier corridors
+
+Investigate anomalies within “Other” categories to improve data quality
+
+Technical Stack
+
+Programming: Python
+
+Libraries: Pandas, NumPy, Statsmodels (SARIMAX)
+
+Visualization: Matplotlib, Seaborn
+
+Evaluation: MAE, RMSE, SMAPE
+
+Future Enhancements
+
+Explore automated hyperparameter tuning for SARIMA
+
+Benchmark against models like Prophet, XGBoost, or LSTM
+
+Incorporate holiday calendars for improved accuracy
+
+Build a real-time forecasting dashboard with Flask or Streamlit
+
+Use clustering techniques to group routes with similar demand patterns
+
+Conclusion
+
+The SARIMA-driven analysis offers actionable forecasting for daily public transport operations. High-volume services yield reliable predictions, while smaller categories require careful handling due to volatility. These insights support strategic fleet planning, demand management, and service optimization across the transport network.
