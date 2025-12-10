@@ -20,7 +20,7 @@ The dataset, `Daily_Public_Transport_Passenger_Journeys_by_Service_Type_20250603
 
 The dataset spans **several years**, providing a rich history for both **trend analysis** and **short-term forecasting**.
 
----
+
 
 ## **Project Goals**
 
@@ -30,7 +30,7 @@ The dataset spans **several years**, providing a rich history for both **trend a
 * Evaluate forecasts using **MAE, RMSE, and SMAPE**
 * Generate actionable recommendations for **fleet scheduling and resource allocation**
 
----
+
 
 ## **Key Insights from Historical Data**
 
@@ -40,7 +40,7 @@ The dataset spans **several years**, providing a rich history for both **trend a
 4. **Special Event Effects**: Holidays and events create outliers in passenger numbers.
 5. **Right-Skewed Distribution**: High-volume routes show a long-tail distribution; smaller services have frequent zero or near-zero counts.
 
----
+
 
 ## **Forecasting Methodology**
 
@@ -61,7 +61,7 @@ seasonal_order = (0, 1, 1, 7)   # Seasonal AR, differencing, MA for weekly seaso
 forecast_horizon = 7             # Next 7 days
 ```
 
----
+
 
 ## **Forecast Results (7 Days)**
 
@@ -77,7 +77,7 @@ forecast_horizon = 7             # Next 7 days
 
 > Negative predictions are set to **0**, reflecting realistic passenger counts.
 
----
+
 
 ## **Model Performance**
 
@@ -94,7 +94,7 @@ forecast_horizon = 7             # Next 7 days
 * **High-volume services** (Local, Light Rail, Rapid) are forecasted accurately.
 * **Low-volume services** (Peak, School) have high SMAPE due to sparse data but still provide actionable information.
 
----
+
 
 ## **Operational Recommendations**
 
@@ -103,7 +103,7 @@ forecast_horizon = 7             # Next 7 days
 * Reassign **idle buses** to high-demand routes
 * Monitor anomalies and data quality issues in the “Other” category
 
----
+
 
 ## **Technical Stack**
 
@@ -113,7 +113,7 @@ forecast_horizon = 7             # Next 7 days
 * Matplotlib & Seaborn: Visualization
 * Metrics: MAE, RMSE, SMAPE
 
----
+
 
 ## **Future Enhancements**
 
