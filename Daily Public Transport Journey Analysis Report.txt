@@ -1,0 +1,160 @@
+Public Transport Ridership Analysis & Forecasting Report
+
+Overview
+
+This documentation summarizes the multi-year analysis of daily public transport passenger journeys and presents a 7-day forecast for multiple service types. The study focuses on understanding ridership patterns, identifying operational challenges, and generating data-driven predictions using Seasonal ARIMA (SARIMA).
+
+Dataset Summary
+
+The dataset contains daily ridership counts for the following service categories:
+
+Local Route
+
+Rapid Route
+
+Peak Service
+
+Light Rail
+
+School Service
+
+Each entry includes:
+Date, Route Type, Daily Passenger Count, and Operational Notes (e.g., holiday effects).
+
+Time span: Multiple years of continuous daily observations, allowing strong seasonal and trend-based modeling.
+
+Weekly Cycles (Descriptive Behaviors Only — No Insights Here)
+
+Ridership typically rises on weekdays, driven by office commuters and students.
+
+Lower values appear on weekends, reflecting reduced travel needs.
+
+School Services follow academic calendars, showing spikes during term time and falling sharply during vacations.
+
+Weekly seasonality is consistent across Local and Rapid routes but more irregular for Peak and School services.
+
+Observed Long-Term Trends
+
+Local and Rapid Routes show a gradual upward trend, indicating increasing urban mobility demand.
+
+Light Rail maintains a stable long-term pattern but occasionally fluctuates due to infrastructure upgrades and city events.
+
+Peak Service remains comparatively steady, serving mostly fixed-time commuters.
+
+School Service exhibits a repetitive term-based seasonal structure.
+
+High Volatility in Small Services
+
+Small-volume categories such as Peak Service and School Routes experience sharp day-to-day fluctuations.
+Factors contributing to volatility:
+
+Exam weeks
+
+Unexpected holidays
+
+Event-based traffic changes
+
+Weather-driven travel behavior shifts
+
+These fluctuations require smoothing techniques before forecasting.
+
+Distribution Characteristics
+
+Ridership values display a right-skewed distribution, with most days having moderate demand but a few extreme high-volume days.
+This behavior is common in public transport systems, especially during:
+
+Festivals
+
+Public gatherings
+
+Long weekends
+
+Tourist seasons
+
+Impact of Special Events
+
+Special events cause sudden spikes or dips in ridership. Examples include:
+
+City festivals
+
+Government holidays
+
+Sporting events
+
+Public strikes
+
+Heavy rainfall or weather alerts
+
+These irregularities create outliers in the time series and require careful preprocessing.
+
+Key Insights (5 Highest-Value Insights Only)
+
+These insights are independent from the Weekly Cycles section.
+
+Insight: Weekday Patterns Drive Core Demand
+
+Consistently higher weekday ridership shows that essential commuting remains the backbone of the transport system.
+
+Insight: Long-Term Growth in Local & Rapid Routes
+
+These two segments form the most stable and scalable categories, helping planners prioritize fleet expansion.
+
+Insight: High Variability in School & Peak Routes
+
+Erratic patterns require flexible scheduling strategies and dynamic resource allocation.
+
+Insight: Event-Driven Outliers Affect Forecast Accuracy
+
+Outliers must be treated carefully to avoid distorted predictions and unstable models.
+
+Insight: Right-Skewed Demand Indicates Occasional Overload Days
+
+Transport operators must plan contingency capacity for rare high-demand days.
+
+Forecasting Approach (SARIMA)
+
+The SARIMA model is used because the dataset shows clear seasonality, trend, and irregular variations.
+Forecast is generated independently for:
+
+Local Route
+
+Rapid Route
+
+Light Rail
+
+Peak Service
+
+School Route
+
+Model steps included:
+
+Resampling data to daily series
+
+Detecting seasonality using ACF/PACF
+
+Parameter tuning with grid search
+
+Train-test split for accuracy measurement
+
+7-day forward prediction
+
+SARIMA captures weekly seasonality effectively, enabling more reliable forecasts.
+
+7-Day Ridership Forecast (Summary)
+
+The model generates ridership estimates for each service category.
+The forecast helps operational teams:
+
+Allocate buses/trains
+
+Plan crew schedules
+
+Manage crowding
+
+Reduce operational costs
+
+(Insert your forecast table/plot here.)
+
+Conclusion
+
+This report presents a comprehensive analysis of daily public transport ridership, highlighting weekly patterns, volatility behavior, and long-term trends. The SARIMA-based forecast equips transportation authorities with actionable insights for demand management and operational planning.
